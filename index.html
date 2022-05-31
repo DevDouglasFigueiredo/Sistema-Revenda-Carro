@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sistema Revenda de Carro</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h1 class="titulo">Sistema Revenda JS</h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Carros semi novos disponiveis para venda </h2>
+				<label for="filtar-tabela">Filtro</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do carro">
+				
+				<table>
+					<thead>
+						<tr>
+							<th>Modelo</th>
+							<th>Fabricante</th>
+							<th>Ano</th>
+							<th>Motor</th>
+							<th>Combustivel</th>
+							<th>Cambio</th>
+							<th>Km/Rodado</th>
+							<th>Valor-Comprado</th>
+							<th>Valor <br> de Venda</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-carros">
+						<tr class="carro" id="primeiro-carro">
+							<td class="info-modelo">Sandero</td>
+							<td class="info-fabricante">Renault</td>
+							<td class="info-ano">2015</td>
+							<td class="info-motor">1.6</td>
+							<td class="info-combustivel">Flex</td>
+							<td class="info-cambio">Manual</td>
+							<td class="info-km">55.000</td>
+							<td class="info-valor-comprado">R$ 31.000</td>
+							<td class="info-valor-venda">R$0</td>
+						</tr>
+
+						<tr class="carro" >
+                            <td class="info-modelo">Gol</td>
+							<td class="info-peso">Wolkswagen</td>
+							<td class="info-ano">2018</td>
+							<td class="info-motor">1.0</td>
+							<td class="info-combustivel">Flex</td>
+							<td class="info-cambio">Manual</td>
+							<td class="info-km">74.000</td>
+							<td class="info-valor-comprado">R$ 38.000</td>
+							<td class="info-valor-venda">R$0</td>
+						</tr>
+
+						<tr class="carro" >
+							<td class="info-modelo">HB-20</td>
+							<td class="info-peso">Hyundai</td>
+							<td class="info-motor">2017</td>
+							<td class="info-motor">1.0</td>
+							<td class="info-combustivel">Flex</td>
+							<td class="info-cambio">Automatico</td>
+							<td class="info-km">27.400</td>
+							<td class="info-valor-comprado">R$ 57.400</td>
+							<td class="info-valor-venda">R$0</td>
+						</tr>
+
+						<tr class="carro">
+							<td class="info-modelo">Onix</td>
+							<td class="info-peso">Chevrolet</td>
+							<td class="info-motor">2014</td>
+							<td class="info-motor">1.4</td>
+							<td class="info-combustivel">Flex</td>
+							<td class="info-cambio">Manual</td>
+							<td class="info-km">91.000</td>
+							<td class="info-valor-comprado">R$ 32.000</td>
+							<td class="info-valor-venda">R$0</td>
+						</tr>
+						<tr class="carro" >
+							<td class="info-modelo">Palio</td>
+							<td class="info-peso">Fiat</td>
+							<td class="info-motor">2013</td>
+							<td class="info-motor">1.6</td>
+							<td class="info-combustivel">Flex</td>
+							<td class="info-cambio">Manual</td>
+							<td class="info-km">102.000</td>
+							<td class="info-valor-comprado">R$ 23.000</td>
+							<td class="info-valor-venda">R$0</td>
+						</tr>
+					</tbody>
+				</table>
+				<span id="erro-ajax" class="invisivel">Erro ao buscar o carro</span>
+				<button id="buscar-pacientes" class="botao bto-principal">Buscar Carro</button>
+			</section>
+		</main>
+
+		<!-- ... -->
+<section class="container">
+    <h2 id="titulo-form">Adicionar novo carro</h2>
+	<ul id="mensagens-erro">
+		
+	</ul>
+    <form id="form-adiciona">
+        <div class="grupo">
+            <label for="modelo">Modelo:</label>
+            <input id="modelo" name="modelo" type="text" class="campo">
+        </div>
+        <div class="grupo">
+            <label for="fabricante">Fabricante:</label>
+            <input id="fabricante" name="fabricante" type="text" class="campo campo-medio">
+        </div>
+        <div class="grupo">
+            <label for="ano">Ano:</label>
+            <input id="ano" name="ano" type="text" class="campo campo-medio">
+        </div>
+        <div class="grupo">
+            <label for="motor">Motor:</label>
+            <input id="motor" type="text" class="campo campo-medio">
+        </div>
+        <div class="grupo">
+            <label for="combustivel">Combustivel:</label>
+            <input id="combustivel" type="text"class="campo campo-medio">
+        </div>
+        <div class="grupo">
+            <label for="cambio">Cambio:</label>
+            <input id="cambio" type="text"class="campo campo-medio">
+        </div>
+        <div class="grupo">
+            <label for="km">Km/Rodado:</label>
+            <input id="km" type="text" class="campo campo-medio">
+        </div>
+        <div class="grupo">
+            <label for="valorComprado">Valor Comprado:</label>
+            <input id="valorComprado" type="text" class="campo campo-medio">
+        </div>
+        
+
+        <button id="adicionar-carro" class="botao bto-principal">Adicionar</button>
+    </form>
+</section>
+
+		<script src="main.js"></script>
+		
+	</body>
+</html>
