@@ -5,10 +5,11 @@
 body{
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 14px;
+	background: #ccc;
 }
 
 header{
-	background-color: #333;
+	background-color: rgb(12, 17, 63);
 	height: 3em;
 	color: #FFF;
 	margin-bottom: 1em;
@@ -60,20 +61,21 @@ table{
 
 td, th {
 	padding-block: .9em;
-    
-	
+    background-color: #ffffff;
 	margin: 0;
-	border: 1px solid #ccc;
+	border: 1px solid rgb(0, 0, 0);
 	text-align: center;
+	color:rgb(0, 0, 0)
 }
 
 th{
 	font-weight: bold;
-	background-color: #EEE;
+	background-color: rgb(12, 17, 63);
+	color: #ccc;
 }
 
 label{
-	color: #555;
+	color: rgb(0, 0, 0);
 	display: block;
 	margin-bottom: .2em;
 }

@@ -1,15 +1,18 @@
-let adicionarCarro = document.querySelector('#adicionar-carro');
+let botaoAdicionarCarro = document.querySelector('#adicionar-carro');
 
-adicionarCarro.addEventListener('click', (evento) =>{
+botaoAdicionarCarro.addEventListener('click', (evento) =>{
     evento.preventDefault();
 
     let form = document.querySelector('#form-adiciona')
     let carro = colocarCarroNoFormulario(form)
+
+    adicionarCarroNaTabela(carro);
+    CalculoDovalorDeVenda()
     
 })
 
 function adicionarCarroNaTabela(carro){
-    let carroTr = carroTr(carro)
+    let carroTr = montaTr(carro)
     let tabela = document.querySelector('#tabela-carros')
     tabela.appendChild(carroTr)
 }
@@ -23,9 +26,9 @@ function colocarCarroNoFormulario (form){
         combustivel: form.combustivel.value,
         cambio: form.cambio.value,
         km: form.km.value,
-        // valorComprado: form.valor.value
-
+        valorComprado: form.valorComprado.value
     }
+    return carro;
 }
 
 function montaTd (dado, classe){
@@ -48,4 +51,18 @@ function montaTr (carro){
     carroTr.appendChild(montaTd(carro.cambio, "info-cambio"));
     carroTr.appendChild(montaTd(carro.km, "info-km"));
     carroTr.appendChild(montaTd(carro.valorComprado, "info-valor-comprado"));
+
+    return carroTr;
+}
+
+function CalculoDovalorDeVenda () {
+    
+    let tdValorComprado = document.querySelector('.info-valor-comprado')
+    let valorComprado = tdValorComprado.textContent;
+    const margemDeLucro = 40
+
+    valorDeVenda = 0
+
+    valorDeVenda = valorComprado * margemDeLucro
+    console.log(valorDeVenda)
 }
