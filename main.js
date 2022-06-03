@@ -66,3 +66,9 @@ function converterR$ (valorAconverter){
       return `R$ ${valorAconverter.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}`
 
 }
+
+let btnVendido = document.querySelector('.status-vendido')
+
+btnVendido.addEventListener('click', () =>{
+    alert('vendido')
+})
