@@ -18,7 +18,7 @@
 		<main>
 			<section class="container">
 				<h2>Carros semi novos disponiveis para venda </h2>
-				<label for="filtar-tabela">Filtro</label>
+				<label for="filtrar-tabela">Filtro</label>
 				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do carro">
 				
 				<table>
@@ -51,12 +51,13 @@
 								<div class="status-vendido">Vendido</div>
 								<div class="status-disponivel">Disponivel</div>
 								<div class="status-analise">Em Analise</div>
+								<div class="status-deletar">Deletar</div>
 							</td>
 						</tr>
 
 						<tr class="carro" >
                             <td class="info-modelo">Gol</td>
-							<td class="info-peso">Wolkswagen</td>
+							<td class="info-fabricante">Wolkswagen</td>
 							<td class="info-ano">2018</td>
 							<td class="info-motor">1.0</td>
 							<td class="info-combustivel">Flex</td>
@@ -68,13 +69,14 @@
 								<div class="status-vendido">Vendido</div>
 								<div class="status-disponivel">Disponivel</div>
 								<div class="status-analise">Em Analise</div>
+								<div class="status-deletar">Deletar</div>
 							</td>
 						</tr>
 
 						<tr class="carro" >
 							<td class="info-modelo">HB-20</td>
-							<td class="info-peso">Hyundai</td>
-							<td class="info-motor">2017</td>
+							<td class="info-fabricante">Hyundai</td>
+							<td class="info-ano">2017</td>
 							<td class="info-motor">1.0</td>
 							<td class="info-combustivel">Flex</td>
 							<td class="info-cambio">Automatico</td>
@@ -85,13 +87,14 @@
 								<div class="status-vendido">Vendido</div>
 								<div class="status-disponivel">Disponivel</div>
 								<div class="status-analise">Em Analise</div>
+								<div class="status-deletar">Deletar</div>
 							</td>
 						</tr>
 
 						<tr class="carro">
 							<td class="info-modelo">Onix</td>
-							<td class="info-peso">Chevrolet</td>
-							<td class="info-motor">2014</td>
+							<td class="info-fabricante">Chevrolet</td>
+							<td class="info-ano">2014</td>
 							<td class="info-motor">1.4</td>
 							<td class="info-combustivel">Flex</td>
 							<td class="info-cambio">Manual</td>
@@ -102,12 +105,13 @@
 								<div class="status-vendido">Vendido</div>
 								<div class="status-disponivel">Disponivel</div>
 								<div class="status-analise">Em Analise</div>
+								<div class="status-deletar">Deletar</div>
 							</td>
 						</tr>
 						<tr class="carro" >
 							<td class="info-modelo">Palio</td>
-							<td class="info-peso">Fiat</td>
-							<td class="info-motor">2013</td>
+							<td class="info-fabricante">Fiat</td>
+							<td class="info-ano">2013</td>
 							<td class="info-motor">1.6</td>
 							<td class="info-combustivel">Flex</td>
 							<td class="info-cambio">Manual</td>
@@ -118,18 +122,19 @@
 								<div class="status-vendido">Vendido</div>
 								<div class="status-disponivel">Disponivel</div>
 								<div class="status-analise">Em Analise</div>
+								<div class="status-deletar">Deletar</div>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				<span id="erro-ajax" class="invisivel">Erro ao buscar o carro</span>
-				<button id="buscar-pacientes" class="botao bto-principal">Buscar Carro</button>
+				<!-- <button id="buscar-pacientes" class="botao bto-principal">Buscar Carro</button> -->
 			</section>
 		</main>
 
 		<!-- ... -->
 <section class="container">
-    <h2 id="titulo-form">Adicionar novo carro</h2>
+    <h2 id="titulo-form">Adicionar Novo Carro</h2>
 	<ul id="mensagens-erro">
 		
 	</ul>
@@ -144,7 +149,7 @@
         </div>
         <div class="grupo">
             <label for="ano">Ano:</label>
-            <input id="ano" name="ano" type="text" class="campo campo-medio">
+            <input id="ano" name="ano" type="text" maxlength="4" class="campo campo-medio">
         </div>
         <div class="grupo">
             <label for="motor">Motor:</label>
@@ -159,8 +164,8 @@
             <input id="cambio" type="text"class="campo campo-medio">
         </div>
         <div class="grupo">
-            <label for="km">Km/Rodado:</label>
-            <input id="km" type="text" class="campo campo-medio">
+            <label for="km">Kilometragem:</label>
+            <input id="km" type="text" maxlength="7" class="campo campo-medio">
         </div>
         <div class="grupo">
             <label for="valorComprado">Valor Comprado:</label>
@@ -172,7 +177,11 @@
     </form>
 </section>
 
-		<script src="main.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/delete.js"></script>
+		<script src="js/filtro.js"></script>
+		<script src="js/calculo-de-venda.js"></script>
+		<script src="js/validacao.js"></script>
 		
 	</body>
 </html>

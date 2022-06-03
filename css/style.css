@@ -112,6 +112,15 @@ th{
 	
 }
 
+.status-deletar{
+	background-color: #ff0202;
+	border: 1px solid #000;
+	color: rgb(255, 255, 255);
+	padding: .5rem;
+	cursor: pointer;
+	
+}
+
 .carro-vendido{
 	background-color: #1ae435;
 }

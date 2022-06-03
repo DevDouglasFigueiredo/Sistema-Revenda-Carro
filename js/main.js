@@ -8,6 +8,14 @@ botaoAdicionarCarro.addEventListener('click', (evento) =>{
 
     adicionarCarroNaTabela(carro);
     CalculoDoValorDeVenda()
+
+    let erros = validaCarro(carro)
+    console.log(erros)
+
+    if(erros.length < 0){
+       exibeMensagensDeErro(erros)
+        return;
+    }
     
 })
 
@@ -52,23 +60,6 @@ function montaTr (carro){
     carroTr.appendChild(montaTd(carro.km, "info-km"));
     carroTr.appendChild(montaTd(converterR$(carro.valorComprado), "info-valor-comprado"));
     carroTr.appendChild(montaTd(converterR$(CalculoDoValorDeVenda(carro.valorComprado, 40)), "info-valor-de-venda"));
-
+    
     return carroTr;
 }
-
-function CalculoDoValorDeVenda (valorComprado, porcentagemDeLucro) {
- 
-  return valorComprado * (1+porcentagemDeLucro/100)
-    
-} 
-
-function converterR$ (valorAconverter){
-      return `R$ ${valorAconverter.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}`
-
-}
-
-let btnVendido = document.querySelector('.status-vendido')
-
-btnVendido.addEventListener('click', () =>{
-    alert('vendido')
-})
