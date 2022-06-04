@@ -3,11 +3,11 @@ function validaCarro (carro) {
     let erros = []
 
     if (carro.modelo.length == 0){
-        erros.push('Informe o nome do carro por favor')
+        erros.push('Insira o nome do carro por favor')
     }
 
     if (carro.fabricante.length == 0){
-        erros.push('Informe o nome do fabricante por favor')
+        erros.push('Insira o nome do fabricante por favor')
     }
 
     return erros;
