@@ -5,17 +5,23 @@ botaoAdicionarCarro.addEventListener('click', (evento) =>{
 
     let form = document.querySelector('#form-adiciona')
     let carro = colocarCarroNoFormulario(form)
+    let carroTr = montaTr(carro)
 
-    adicionarCarroNaTabela(carro);
     CalculoDoValorDeVenda()
-
+    
     let erros = validaCarro(carro)
     console.log(erros)
-
-    if(erros.length < 0){
-       exibeMensagensDeErro(erros)
+    
+    if(erros.length > 0){
+        exibeMensagensDeErro(erros)
         return;
+    } else {
+        
+        adicionarCarroNaTabela(carro);
     }
+    
+    
+    form.reset();
     
 })
 
@@ -59,7 +65,7 @@ function montaTr (carro){
     carroTr.appendChild(montaTd(carro.cambio, "info-cambio"));
     carroTr.appendChild(montaTd(carro.km, "info-km"));
     carroTr.appendChild(montaTd(converterR$(carro.valorComprado), "info-valor-comprado"));
-    carroTr.appendChild(montaTd(converterR$(CalculoDoValorDeVenda(carro.valorComprado, 40)), "info-valor-de-venda"));
+    carroTr.appendChild(montaTd(converterR$(CalculoDoValorDeVenda(carro.valorComprado, 45)), "info-valor-de-venda"));
     
     return carroTr;
 }

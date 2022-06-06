@@ -217,3 +217,7 @@ button[disabled=disabled], button:disabled {
 .invisivel{
 	display: none;
 }
+
+.input-erro {
+	border: 1px solid red;
+}
