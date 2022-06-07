@@ -221,3 +221,7 @@ button[disabled=disabled], button:disabled {
 .input-erro {
 	border: 1px solid red;
 }
+
+.analisando{
+	background-color: #efff11;
+}

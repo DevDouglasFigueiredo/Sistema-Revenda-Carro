@@ -1,6 +1,6 @@
 let botaoAdicionarCarro = document.querySelector('#adicionar-carro');
 
-botaoAdicionarCarro.addEventListener('click', (evento) =>{
+botaoAdicionarCarro.addEventListener('click', (evento) => {
     evento.preventDefault();
 
     let form = document.querySelector('#form-adiciona')
@@ -8,30 +8,30 @@ botaoAdicionarCarro.addEventListener('click', (evento) =>{
     let carroTr = montaTr(carro)
 
     CalculoDoValorDeVenda()
-    
+
     let erros = validaCarro(carro)
-    console.log(erros)
-    
-    if(erros.length > 0){
+
+    if (erros.length > 0) {
         exibeMensagensDeErro(erros)
+        
         return;
     } else {
-        
+
         adicionarCarroNaTabela(carro);
     }
-    
-    
+
+
     form.reset();
-    
+
 })
 
-function adicionarCarroNaTabela(carro){
+function adicionarCarroNaTabela(carro) {
     let carroTr = montaTr(carro)
     let tabela = document.querySelector('#tabela-carros')
     tabela.appendChild(carroTr)
 }
 
-function colocarCarroNoFormulario (form){
+function colocarCarroNoFormulario(form) {
     let carro = {
         modelo: form.modelo.value,
         fabricante: form.fabricante.value,
@@ -45,7 +45,7 @@ function colocarCarroNoFormulario (form){
     return carro;
 }
 
-function montaTd (dado, classe){
+function montaTd(dado, classe) {
     let td = document.createElement('td')
     td.classList.add('classe')
     td.textContent = dado;
@@ -53,7 +53,7 @@ function montaTd (dado, classe){
     return td;
 }
 
-function montaTr (carro){
+function montaTr(carro) {
     let carroTr = document.createElement('tr')
     carroTr.classList.add('carro')
 
@@ -66,6 +66,6 @@ function montaTr (carro){
     carroTr.appendChild(montaTd(carro.km, "info-km"));
     carroTr.appendChild(montaTd(converterR$(carro.valorComprado), "info-valor-comprado"));
     carroTr.appendChild(montaTd(converterR$(CalculoDoValorDeVenda(carro.valorComprado, 45)), "info-valor-de-venda"));
-    
+
     return carroTr;
 }
