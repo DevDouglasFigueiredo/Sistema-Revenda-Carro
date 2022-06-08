@@ -13,7 +13,7 @@ botaoAdicionarCarro.addEventListener('click', (evento) => {
 
     if (erros.length > 0) {
         exibeMensagensDeErro(erros)
-        
+
         return;
     } else {
 
@@ -66,6 +66,15 @@ function montaTr(carro) {
     carroTr.appendChild(montaTd(carro.km, "info-km"));
     carroTr.appendChild(montaTd(converterR$(carro.valorComprado), "info-valor-comprado"));
     carroTr.appendChild(montaTd(converterR$(CalculoDoValorDeVenda(carro.valorComprado, 45)), "info-valor-de-venda"));
+
+    carroTr.innerHTML+=(`
+    <td class="info-status">
+		<div class="status-vendido">Vendido</div>
+		<div class="status-disponivel">Disponivel</div>
+		<div class="status-analise">Em Analise</div>
+		<div class="status-deletar">Deletar</div>
+	</td>
+    `);
 
     return carroTr;
 }

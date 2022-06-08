@@ -1,27 +1,39 @@
-  let tabela = document.querySelector('#tabela-carros')
-  let btnDeletar = document.querySelectorAll('.status-deletar')
-  let btnAnalise = document.querySelectorAll('.status-analise')
-  
-  btnDeletar.forEach(btn => {
-    btn.addEventListener('click', deletarCarro)
-  
-    function deletarCarro(evento) {
-      
-      evento.target.parentNode.parentNode.classList.add('fadeOut');
+let tabela = document.querySelector('#tabela-carros')
+let btnDeletar = document.querySelectorAll('.status-deletar')
+let btnAnalise = document.querySelectorAll('.status-analise')
+let btnDisponivel = document.querySelectorAll('.status-disponivel')
+let btnVendido = document.querySelectorAll('.status-vendido')
 
-    //   setTimeout(function() {
-    //      evento.target.parentNode.parentNode.remove();
-    // }, 600);
 
-  }})
+btnAnalise.forEach(btn => insereCor(btn, 'analisando'))
+btnDisponivel.forEach(btn => insereCor(btn, 'disponivel'))
+btnVendido.forEach(btn => insereCor(btn, 'vendido'))
 
-  btnAnalise.forEach(btn => {
-    btn.addEventListener('click', carroEmAnalise)
-
-    function carroEmAnalise (evento){
-
-      evento.target.parentNode.parentNode.classList.add('analisando')
-    }
+function insereCor(seletor, classe) {
+  seletor.addEventListener('click', evento => {
+    removeCor(evento)
+    evento.target.parentNode.parentNode.classList.add(classe)
   })
+}
 
+btnDeletar.forEach(fnCb)
+
+function fnCb(btnDeletar){
+  btnDeletar.addEventListener('click', deletarCarro)
+}
+
+function deletarCarro(evento) {
+  
+  evento.target.parentNode.parentNode.classList.add('fadeOut')
+  setTimeout(function () {
+    evento.target.parentNode.parentNode.remove()
+  }, 600)
+}
+
+
+function removeCor(evento) {
+  evento.target.parentNode.parentNode.classList.remove('analisando')
+  evento.target.parentNode.parentNode.classList.remove('disponivel')
+  evento.target.parentNode.parentNode.classList.remove('vendido')
+}
 

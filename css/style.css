@@ -57,12 +57,12 @@ table{
 	width: 100%;
 	margin-bottom : .5em;
 	padding: 2rem;
+	background-color: #ffffff;
 	
 }
 
 td{
 	padding-block: .9em;
-    background-color: #ffffff;
 	border: 1px solid rgb(0, 0, 0);
 	text-align: center;
 	color:rgb(0, 0, 0)
@@ -224,4 +224,13 @@ button[disabled=disabled], button:disabled {
 
 .analisando{
 	background-color: #efff11;
+}
+
+.disponvel{
+	background-color: transparent;
+}
+
+.vendido{
+	background-color: #1ae435;
+
 }
