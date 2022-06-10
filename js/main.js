@@ -69,10 +69,10 @@ function montaTr(carro) {
 
     carroTr.innerHTML +=(`
     <td class="info-status">
-		<div class="status-vendido"> Vendido </div>
-		<div class="status-disponivel"> Disponivel </div>
-		<div class="status-analise"> Em Analise </div>
-		<div class="status-deletar"> Deletar </div>
+        <button class="status-vendido">Vendido</button>
+        <button class="status-disponivel">Disponivel</button>
+        <button class="status-analise">Em Analise</button>
+        <button class="status-deletar">Deletar</button>
 	</td>
     `);
 
