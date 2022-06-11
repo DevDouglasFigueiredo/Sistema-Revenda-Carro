@@ -9,7 +9,7 @@ btnAnalise.forEach(btn => insereCor(btn, 'analisando'))
 btnDisponivel.forEach(btn => insereCor(btn, 'disponivel'))
 btnVendido.forEach(btn => insereCor(btn, 'vendido'))
 
-function insereCor(seletor, classe) {
+function insertColor(seletor, classe) {
   seletor.addEventListener('click', evento => {
     removeCor(evento)
     evento.target.parentNode.parentNode.classList.add(classe)
@@ -19,10 +19,10 @@ function insereCor(seletor, classe) {
 btnDeletar.forEach(fnCb)
 
 function fnCb(btnDeletar){
-  btnDeletar.addEventListener('click', deletarCarro)
+  btnDeletar.addEventListener('click', deleteCarro)
 }
 
-function deletarCarro(evento) {
+function deleteCarro(evento) {
   
   evento.target.parentNode.parentNode.classList.add('fadeOut')
   setTimeout(function () {
