@@ -20,8 +20,9 @@ btnDeletar.forEach(fnCb)
 
 function fnCb(btnDeletar){
   btnDeletar.addEventListener('click', deleteCarro)
+  console.log(fnCb)
   alert('fui clicado')
-}
+}sss
 
 function deleteCarro(evento) {
   
