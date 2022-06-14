@@ -5,9 +5,9 @@ let btnDisponivel = document.querySelectorAll('.status-disponivel')
 let btnVendido = document.querySelectorAll('.status-vendido')
 
 
-btnAnalise.forEach(btn => insereCor(btn, 'analisando'))
-btnDisponivel.forEach(btn => insereCor(btn, 'disponivel'))
-btnVendido.forEach(btn => insereCor(btn, 'vendido'))
+btnAnalise.forEach(btn => insertColor(btn, 'analisando'))
+btnDisponivel.forEach(btn => insertColor(btn, 'disponivel'))
+btnVendido.forEach(btn => insertColor(btn, 'vendido'))
 
 function insertColor(seletor, classe) {
   seletor.addEventListener('click', evento => {
@@ -20,9 +20,8 @@ btnDeletar.forEach(fnCb)
 
 function fnCb(btnDeletar){
   btnDeletar.addEventListener('click', deleteCarro)
-  console.log(fnCb)
-  alert('fui clicado')
-}sss
+  
+}
 
 function deleteCarro(evento) {
   
